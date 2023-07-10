@@ -4,21 +4,19 @@
 		<TargetFrameworks>net7.0;net6.0</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>1.0.1</Version>
+		<Version>1.0.3</Version>
 		<Authors>LiuYang</Authors>
 		<PackageId>BlazorCodemirror</PackageId>
-		<RepositoryUrl>https://github.com/restsharp/RestSharp.git</RepositoryUrl>
+		<RepositoryUrl>https://github.com/Tuoboc/BlazorCodemirror.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<Summary>This is a code editor for Blazor,Based on Codemirror</Summary>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Readme.md" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Content Include="Readme.md">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
+		<None Include="Readme.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 
