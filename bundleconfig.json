@@ -1,0 +1,11 @@
+[
+  {
+    "outputFileName": "wwwroot/js/BlazorCodemirror.min.js",
+    "inputFiles": [
+      "wwwroot/js/codemirror_5.65.13_codemirror.min.js",
+      "wwwroot/js/loadmode.js",
+      "wwwroot/js/meta.js",
+      "wwwroot/js/BlazorCodemirror.js"
+    ]
+  }
+]
