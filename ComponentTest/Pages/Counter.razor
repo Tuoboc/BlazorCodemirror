@@ -1,0 +1,17 @@
+﻿@page "/counter"
+@using BlazorCodemirror;
+@inject BlazorCodemirrorJsInterop _codemirror
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<button @onclick="ChangeMode">Change Mode</button>
+<BlazorCodemirror.BlazorCodemirror @bind-Value="@editorvalue" ModeURL="js/%N.min.js" Mime="text/x-mysql" Id="editor_one"></BlazorCodemirror.BlazorCodemirror>
+@code {
+    private string editorvalue { get; set; }
+    private async Task ChangeMode()
+    {
+        await _codemirror.SetEditorMode("editor_one", "text/x-csharp");
+    }
+}

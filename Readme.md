@@ -36,6 +36,44 @@ Add BlazorCodemirror component in your code
 3.Move file to wwwroot/js  
 4.Add BlazorCodemirror section to your code  
 `<BlazorCodemirror.BlazorCodemirror Mime="text/javascript" ModeURL="js/%N.min.js"></BlazorCodemirror.BlazorCodemirror>`  
+## Dynamic change code mode
+1.Download mode file. for example: [javascript](https://codemirror.net/5/mode/javascript/javascript.js)  
+2.Rename file to {modename}.min.js. for example: javascript.min.js   
+3.Move file to wwwroot/js  
+4.Add BlazorCodemirror section in your code,`Id` parameter is required  
+`<BlazorCodemirror.BlazorCodemirror Mime="text/javascript" ModeURL="js/%N.min.js" Id="editor_one"></BlazorCodemirror.BlazorCodemirror>`  
+5.Add change mode button in your code  
+`<button @onclick="ChangeMode">Change Mode</button>`  
+6.inject service in your page  
+`@inject BlazorCodemirrorJsInterop _codemirror`  
+7.Add ChangeMode function
+```
+ private async Task ChangeMode()
+    {
+        await _codemirror.SetEditorMode("editor_one", "text/x-csharp");
+    }
+```
+full code example  
+```
+@page "/counter"
+@using BlazorCodemirror;
+@inject BlazorCodemirrorJsInterop _codemirror
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<button @onclick="ChangeMode">Change Mode</button>
+<BlazorCodemirror.BlazorCodemirror @bind-Value="@editorvalue" ModeURL="js/%N.min.js" Mime="text/x-mysql" Id="editor_one"></BlazorCodemirror.BlazorCodemirror>
+@code {
+    private string editorvalue { get; set; }
+    private async Task ChangeMode()
+    {
+        await _codemirror.SetEditorMode("editor_one", "text/x-csharp");
+    }
+}
+
+```
 ## Change theme  
 1.Download theme file  
 2.Move file to wwwroot/css  

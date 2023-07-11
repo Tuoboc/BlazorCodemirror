@@ -4,7 +4,7 @@
 		<TargetFrameworks>net7.0;net6.0</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>1.0.3</Version>
+		<Version>1.0.4</Version>
 		<Authors>LiuYang</Authors>
 		<PackageId>BlazorCodemirror</PackageId>
 		<RepositoryUrl>https://github.com/Tuoboc/BlazorCodemirror.git</RepositoryUrl>
@@ -14,6 +14,13 @@
 		<PackageReadmeFile>Readme.md</PackageReadmeFile>
 		<Summary>This is a code editor for Blazor,Based on Codemirror</Summary>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="ComponentTest\**" />
+	  <Content Remove="ComponentTest\**" />
+	  <EmbeddedResource Remove="ComponentTest\**" />
+	  <None Remove="ComponentTest\**" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="Readme.md" Pack="true" PackagePath="\" />
@@ -26,8 +33,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.19" Condition="'$(TargetFramework)' == 'net6.0'"/>
-		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.8" Condition="'$(TargetFramework)' == 'net7.0'"/>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.19" Condition="'$(TargetFramework)' == 'net6.0'" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.8" Condition="'$(TargetFramework)' == 'net7.0'" />
 	</ItemGroup>
 
 	<ItemGroup>
