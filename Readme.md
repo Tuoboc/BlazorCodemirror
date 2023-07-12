@@ -22,7 +22,17 @@ Add BlazorCodemirror component in your code
 * Id  
   - Component id,if page contains more than one editor,use the id parameter opearate the editor.
 * Height
-  - Component height,unit px,default value 300px.
+  - Component height,default value 300px.
+  - options:  
+  `auto` auto height and grow once the contents exceed that height  
+  `300px` fixed height, a scroll bar will appear if the height is exceeded
+* Width
+  - Component width,default value 100%.
+  - options:  
+  `100%` fixed percent width  
+  `300px` fixed width
+* ReadOnly
+  - default value false.
 * Mime
   - Editor mode,default value `text/x-csharp`.
 * ModeURL

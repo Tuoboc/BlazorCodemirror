@@ -27,10 +27,10 @@ namespace BlazorCodemirror
         /// <param name="Theme">editor theme,default value:dracula</param>
         /// <param name="dotNetHelper"></param>
         /// <returns></returns>
-        public async Task InitEditor(string ModeURL, string Mime, int Height, string Id, string Theme, DotNetObjectReference<BlazorCodemirror> dotNetHelper)
+        public async Task InitEditor(string ModeURL, string Mime, string Height, string Width, string Id, string Theme,bool ReadOnly, DotNetObjectReference<BlazorCodemirror> dotNetHelper)
         {
             var module = await moduleTask.Value;
-            await module.InvokeVoidAsync("InitEditor", ModeURL, Mime, Height, Id, Theme);
+            await module.InvokeVoidAsync("InitEditor", ModeURL, Mime, Height, Width, Id, Theme,ReadOnly);
             await module.InvokeVoidAsync("SetDotNetHelper", dotNetHelper);
         }
         /// <summary>

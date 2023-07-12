@@ -24,9 +24,13 @@ namespace BlazorCodemirror
         /// </summary>
         [Parameter] public string ModeURL { get; set; } = "_content/BlazorCodemirror/js/%N.min.js";
         /// <summary>
-        /// TextArea height,unit type px.
+        /// TextArea height,default value 300px.
         /// </summary>
-        [Parameter] public int Height { get; set; } = 300;
+        [Parameter] public string Height { get; set; } = "300";
+        /// <summary>
+        /// TextArea width,default value 100%
+        /// </summary>
+        [Parameter] public string Width { get; set; } = "100%";
         /// <summary>
         /// Mime Type,see https://codemirror.net/5/mode/index.html
         /// </summary>
@@ -34,6 +38,7 @@ namespace BlazorCodemirror
         [Parameter] public string Id { get; set; } = "BlazorCodemirrorTextArea_" + Guid.NewGuid().ToString("N");
 
         [Parameter] public string Theme { get; set; } = "dracula";
+        [Parameter] public bool ReadOnly { get; set; } = false;
 
         private string _value;
         [Parameter]
@@ -63,7 +68,7 @@ namespace BlazorCodemirror
             if (firstRender)
             {
                 dotNetHelper = DotNetObjectReference.Create(this);
-                await _bcji.InitEditor(ModeURL, Mime, Height, Id, Theme, dotNetHelper);
+                await _bcji.InitEditor(ModeURL, Mime, Height, Width, Id, Theme,ReadOnly, dotNetHelper);
             }
         }
 

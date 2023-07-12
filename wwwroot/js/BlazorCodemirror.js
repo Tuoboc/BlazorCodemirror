@@ -1,14 +1,14 @@
-﻿export function InitEditor(modeUrl, mime, height, id, theme) {
+﻿export function InitEditor(modeUrl, mime, height, width, id, theme,readonly) {
     CodeMirror.modeURL = modeUrl;
     var textArea = document.getElementById(id);
     var editor = CodeMirror.fromTextArea(textArea,
         {
             lineNumbers: true,
             theme: theme,
-            height: height + "px",
-            indentUnit: 4
+            indentUnit: 4,
+            readOnly: readonly
         });
-
+    editor.setSize(width, height);
     var val = mime, m, mode, spec;
 
     if (m = /.+\.([^.]+)$/.exec(val)) {

@@ -4,7 +4,7 @@
 		<TargetFrameworks>net7.0;net6.0</TargetFrameworks>
 		<Nullable>disable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>1.0.4</Version>
+		<Version>1.0.5</Version>
 		<Authors>LiuYang</Authors>
 		<PackageId>BlazorCodemirror</PackageId>
 		<RepositoryUrl>https://github.com/Tuoboc/BlazorCodemirror.git</RepositoryUrl>
@@ -13,6 +13,9 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<PackageReadmeFile>Readme.md</PackageReadmeFile>
 		<Summary>This is a code editor for Blazor,Based on Codemirror</Summary>
+		<Description>This is a code editor for Blazor,Based on Codemirror</Description>
+		<PackageReleaseNotes>Add ReadOnly,Width parameters.
+Change Height parameter to string type.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>

@@ -7,7 +7,8 @@
 <h1>Counter</h1>
 
 <button @onclick="ChangeMode">Change Mode</button>
-<BlazorCodemirror.BlazorCodemirror @bind-Value="@editorvalue" ModeURL="js/%N.min.js" Mime="text/x-mysql" Id="editor_one"></BlazorCodemirror.BlazorCodemirror>
+
+<BlazorCodemirror.BlazorCodemirror @bind-Value="@editorvalue" ModeURL="js/%N.min.js" Mime="text/x-mysql" Id="editor_one" ReadOnly=false Height="600px" Width="50%"></BlazorCodemirror.BlazorCodemirror>
 @code {
     private string editorvalue { get; set; }
     private async Task ChangeMode()
